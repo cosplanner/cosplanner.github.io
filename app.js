@@ -17,6 +17,7 @@
 
   const weekday = ["일", "월", "화", "수", "목", "금", "토"];
   let allPlans = [];
+  let activeFilter = "all";
 
   function normalize(value) {
     return String(value ?? "")
@@ -108,6 +109,116 @@
     }
 
     return String(Math.abs(hash) % 5);
+  }
+
+  function filterKey(plan) {
+    const d = parseDateOnly(plan.plan_date);
+    const event = String(plan.event ?? "").trim();
+
+    if (!d || !event) return "";
+
+    return [
+      d.getMonth() + 1,
+      event,
+      weekday[d.getDay()],
+    ].join("|");
+  }
+
+  function filterLabel(plan) {
+    const d = parseDateOnly(plan.plan_date);
+    const event = String(plan.event ?? "").trim();
+
+    if (!d || !event) return "기타";
+
+    return `${d.getMonth() + 1}월 ${event}(${weekday[d.getDay()]})`;
+  }
+
+  function ensureFilterBar() {
+    let filterBar = document.getElementById("planFilterBar");
+
+    if (filterBar) {
+      return filterBar;
+    }
+
+    filterBar = document.createElement("div");
+    filterBar.id = "planFilterBar";
+    filterBar.className = "plan-filter-bar";
+    filterBar.setAttribute("aria-label", "플랜 필터");
+
+    planList.parentNode.insertBefore(filterBar, planList);
+
+    return filterBar;
+  }
+
+  function renderFilters() {
+    const filterBar = ensureFilterBar();
+
+    const items = [];
+    const seen = new Set();
+
+    for (const plan of allPlans) {
+      const key = filterKey(plan);
+
+      if (!key || seen.has(key)) {
+        continue;
+      }
+
+      seen.add(key);
+
+      items.push({
+        key,
+        label: filterLabel(plan),
+        date: parseDateOnly(plan.plan_date)?.getTime() ?? Number.MAX_SAFE_INTEGER,
+      });
+    }
+
+    items.sort((a, b) => {
+      if (a.date !== b.date) return a.date - b.date;
+      return a.label.localeCompare(b.label, "ko-KR");
+    });
+
+    // 현재 데이터에 없어진 필터를 선택 중이었다면 전체로 복귀.
+    if (
+      activeFilter !== "all" &&
+      !items.some((item) => item.key === activeFilter)
+    ) {
+      activeFilter = "all";
+    }
+
+    filterBar.replaceChildren();
+
+    const allButton = document.createElement("button");
+    allButton.type = "button";
+    allButton.className =
+      "plan-filter-button" +
+      (activeFilter === "all" ? " is-active" : "");
+    allButton.textContent = "전체";
+    allButton.addEventListener("click", () => {
+      activeFilter = "all";
+      renderFilters();
+      render();
+    });
+    filterBar.appendChild(allButton);
+
+    for (const item of items) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className =
+        "plan-filter-button" +
+        (activeFilter === item.key ? " is-active" : "");
+      button.textContent = item.label;
+      button.dataset.filterKey = item.key;
+
+      button.addEventListener("click", () => {
+        activeFilter = item.key;
+        renderFilters();
+        render();
+      });
+
+      filterBar.appendChild(button);
+    }
+
+    filterBar.hidden = items.length === 0;
   }
 
   function sortPlans(plans) {
@@ -211,14 +322,23 @@
   }
 
   function render() {
+    const visiblePlans =
+      activeFilter === "all"
+        ? allPlans
+        : allPlans.filter((plan) => filterKey(plan) === activeFilter);
+
     planList.replaceChildren();
 
-    allPlans.forEach((plan, index) => {
+    visiblePlans.forEach((plan, index) => {
       planList.appendChild(createPlanCard(plan, index));
     });
 
-    planCount.textContent = `${allPlans.length}개`;
-    emptyState.hidden = allPlans.length !== 0;
+    planCount.textContent =
+      activeFilter === "all"
+        ? `${allPlans.length}개`
+        : `${visiblePlans.length}개`;
+
+    emptyState.hidden = visiblePlans.length !== 0;
     errorState.hidden = true;
   }
 
@@ -245,6 +365,7 @@
       updatedAt.textContent =
         formatGeneratedAt(data?.generated_at) || "업데이트됨";
 
+      renderFilters();
       render();
     } catch (error) {
       console.error("plans.json load failed:", error);

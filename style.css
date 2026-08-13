@@ -385,3 +385,39 @@ h1 {
     }
   }
 }
+
+
+/* 플랜 필터 버튼 */
+.plan-filter-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 2px 14px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.plan-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.plan-filter-button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid #dcdfea;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #555964;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.plan-filter-button.is-active {
+  border-color: #7d95c7;
+  background: #dce9ff;
+  color: #36547f;
+}
