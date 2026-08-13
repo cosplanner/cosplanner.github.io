@@ -1,8 +1,8 @@
 {
   "version": 7,
-  "revision": "e01e600d99002091e99db0b3",
-  "generated_at": "2026-08-13T12:45:01.109676+00:00",
-  "count": 5,
+  "revision": "ebafd9a8a7f983d5fa92fc6c",
+  "generated_at": "2026-08-13T12:45:27.006763+00:00",
+  "count": 6,
   "plans": [
     {
       "author_name": "kotanem",
@@ -58,6 +58,17 @@
       "costume": "",
       "memo": "오후 6시 퇴근!",
       "updated_at": "2026-08-13T12:44:59.654000+00:00"
+    },
+    {
+      "author_name": "와치",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "plan_date": "2026-08-23",
+      "event": "일러스타 페스",
+      "genre": "",
+      "character": "사진사",
+      "costume": "",
+      "memo": "오후 6시 퇴근!",
+      "updated_at": "2026-08-13T12:45:03.688000+00:00"
     }
   ]
 }
