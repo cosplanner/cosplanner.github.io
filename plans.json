@@ -1,7 +1,7 @@
 {
   "version": 7,
-  "revision": "c629f1afeddfd77b71d3f832",
-  "generated_at": "2026-08-13T12:42:31.109522+00:00",
+  "revision": "9579e49ccf3e70e7d8d11898",
+  "generated_at": "2026-08-13T12:43:03.535890+00:00",
   "count": 4,
   "plans": [
     {
@@ -9,11 +9,11 @@
       "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
       "plan_date": "2026-08-15",
       "event": "코믹월드",
-      "genre": "",
-      "character": "사진사",
+      "genre": "승리의 여신:니케",
+      "character": "갓데스",
       "costume": "",
-      "memo": "11:00 ~ 18:00 예정!",
-      "updated_at": "2026-08-13T12:30:41.060000+00:00"
+      "memo": "혼자 다님",
+      "updated_at": "2026-08-13T12:42:32.094000+00:00"
     },
     {
       "author_name": "와치",
@@ -32,10 +32,10 @@
       "plan_date": "2026-08-16",
       "event": "코믹월드",
       "genre": "승리의 여신:니케",
-      "character": "지휘관",
+      "character": "밀크:바니",
       "costume": "",
-      "memo": "혼자댕김",
-      "updated_at": "2026-08-13T12:32:32.942000+00:00"
+      "memo": "혼자 다님",
+      "updated_at": "2026-08-13T12:42:36.504000+00:00"
     },
     {
       "author_name": "와치",
