@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "revision": "80cfb65004668ea0ba733155",
-  "generated_at": "2026-08-13T12:06:00.912848+00:00",
+  "revision": "158547c16484325009694da9",
+  "generated_at": "2026-08-13T12:06:50.912087+00:00",
   "count": 3,
   "plans": [
     {
@@ -19,10 +19,10 @@
       "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
       "plan_date": "2026-08-15",
       "event": "서코",
-      "character": "히비키",
+      "character": "뫼르소",
       "costume": "",
-      "memo": "솔로",
-      "updated_at": "2026-08-13T12:05:59.517000+00:00"
+      "memo": "혼자다님",
+      "updated_at": "2026-08-13T12:06:45.717000+00:00"
     },
     {
       "author_name": "kotanem",
