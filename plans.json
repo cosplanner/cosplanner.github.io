@@ -1,7 +1,7 @@
 {
   "version": 7,
-  "revision": "5a6fff51572b13e0d06b0381",
-  "generated_at": "2026-08-13T12:32:39.430283+00:00",
+  "revision": "1ca97380f61008ac82cfb58d",
+  "generated_at": "2026-08-13T12:33:02.560183+00:00",
   "count": 4,
   "plans": [
     {
@@ -21,10 +21,10 @@
       "plan_date": "2026-08-15",
       "event": "코믹월드",
       "genre": "",
-      "character": "뫼르소",
+      "character": "사진사",
       "costume": "",
       "memo": "혼자다님",
-      "updated_at": "2026-08-13T12:06:45.717000+00:00"
+      "updated_at": "2026-08-13T12:32:54.502000+00:00"
     },
     {
       "author_name": "kotanem",
