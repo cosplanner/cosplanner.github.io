@@ -1,8 +1,8 @@
 {
   "version": 9,
-  "revision": "b1e43e31524815934b280b82",
-  "generated_at": "2026-08-13T12:58:27.757553+00:00",
-  "count": 9,
+  "revision": "a2c39e25d7eca7bc6f72b19c",
+  "generated_at": "2026-08-13T12:58:51.180508+00:00",
+  "count": 11,
   "plans": [
     {
       "author_name": "kotanem",
@@ -102,6 +102,28 @@
       "costume": "",
       "memo": "오후 6시 퇴근!",
       "updated_at": "2026-08-13T12:58:26.204000+00:00"
+    },
+    {
+      "author_name": "와치",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "plan_date": "2026-09-12",
+      "event": "코믹월드",
+      "genre": "",
+      "character": "사진사",
+      "costume": "",
+      "memo": "오후 6시 퇴근!",
+      "updated_at": "2026-08-13T12:58:28.655000+00:00"
+    },
+    {
+      "author_name": "와치",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "plan_date": "2026-09-13",
+      "event": "코믹월드",
+      "genre": "",
+      "character": "사진사",
+      "costume": "",
+      "memo": "오후 6시 퇴근!",
+      "updated_at": "2026-08-13T12:58:31.215000+00:00"
     }
   ]
 }
