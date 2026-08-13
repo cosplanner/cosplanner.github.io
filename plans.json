@@ -1,7 +1,7 @@
 {
   "version": 7,
-  "revision": "45eca451f7f7067fc22ffe7c",
-  "generated_at": "2026-08-13T12:30:49.430243+00:00",
+  "revision": "5a6fff51572b13e0d06b0381",
+  "generated_at": "2026-08-13T12:32:39.430283+00:00",
   "count": 4,
   "plans": [
     {
@@ -31,11 +31,11 @@
       "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
       "plan_date": "2026-08-16",
       "event": "코믹월드",
-      "genre": "",
-      "character": "사진사",
+      "genre": "승리의 여신:니케",
+      "character": "지휘관",
       "costume": "",
-      "memo": "솔로",
-      "updated_at": "2026-08-13T12:05:27.315000+00:00"
+      "memo": "혼자댕김",
+      "updated_at": "2026-08-13T12:32:32.942000+00:00"
     },
     {
       "author_name": "와치",
