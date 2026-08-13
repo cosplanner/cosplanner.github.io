@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f5fb">
+  <meta name="description" content="코스프레 행사 플랜 모아보기">
+  <title>플랜 모아보기</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="title-row">
+        <h1>플랜 모아보기</h1>
+        <button id="searchToggle" class="icon-button" type="button" aria-label="검색 열기">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/>
+          </svg>
+        </button>
+      </div>
+
+      <section id="searchPanel" class="search-panel" hidden>
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/>
+          </svg>
+          <input
+            id="searchInput"
+            type="search"
+            autocomplete="off"
+            maxlength="80"
+            placeholder="닉네임 · 행사 · 캐릭터 · 메모 검색"
+            aria-label="플랜 검색"
+          >
+        </label>
+      </section>
+
+      <div class="summary-row">
+        <strong id="planCount">0개</strong>
+        <span id="updatedAt" class="updated-at">불러오는 중…</span>
+      </div>
+    </header>
+
+    <section id="planList" class="plan-list" aria-live="polite"></section>
+
+    <section id="emptyState" class="empty-state" hidden>
+      <div class="empty-icon">⌕</div>
+      <strong>표시할 플랜이 없습니다.</strong>
+      <p>검색어를 바꾸거나 잠시 후 다시 확인해주세요.</p>
+    </section>
+
+    <section id="errorState" class="empty-state" hidden>
+      <div class="empty-icon">!</div>
+      <strong>플랜을 불러오지 못했습니다.</strong>
+      <p>잠시 후 새로고침해주세요.</p>
+      <button id="retryButton" class="retry-button" type="button">다시 불러오기</button>
+    </section>
+  </main>
+
+  <template id="planCardTemplate">
+    <article class="plan-card">
+      <div class="author-row">
+        <div class="author">
+          <img class="avatar" alt="" width="38" height="38" loading="lazy" referrerpolicy="no-referrer">
+          <div class="author-text">
+            <strong class="author-name"></strong>
+            <span class="plan-relative-time"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="badge date-badge"></span>
+        <span class="badge event-badge"></span>
+      </div>
+
+      <div class="card-main">
+        <div class="card-copy">
+          <h2 class="character"></h2>
+          <p class="costume"></p>
+          <p class="memo"></p>
+          <time class="plan-date"></time>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
