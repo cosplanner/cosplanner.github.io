@@ -1,7 +1,7 @@
 {
-  "version": 2,
-  "revision": "020671495cbfd5202de12fad",
-  "generated_at": "2026-08-13T11:41:09.108372+00:00",
+  "version": 4,
+  "revision": "6a6b7088ec18549e4662f544",
+  "generated_at": "2026-08-13T11:58:43.255259+00:00",
   "count": 1,
   "plans": [
     {
@@ -10,8 +10,8 @@
       "plan_date": "2026-08-15",
       "event": "서코",
       "character": "도로시",
-      "costume": "세렌디피티/혼자다님",
-      "memo": "",
+      "costume": "세렌디피티",
+      "memo": "혼자다님",
       "updated_at": "2026-08-13T11:40:51.572000+00:00"
     }
   ]
