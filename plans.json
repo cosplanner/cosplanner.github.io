@@ -1,20 +1,9 @@
 {
   "version": 10,
-  "revision": "c13386023be8a1512ee7d356",
-  "generated_at": "2026-08-13T13:10:00.216890+00:00",
-  "count": 7,
+  "revision": "b512d37adb5af28ea9ffe59d",
+  "generated_at": "2026-08-13T13:10:35.748947+00:00",
+  "count": 2,
   "plans": [
-    {
-      "author_name": "kotanem",
-      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
-      "plan_date": "2026-08-15",
-      "event": "코믹월드",
-      "genre": "승리의 여신:니케",
-      "character": "갓데스",
-      "costume": "",
-      "memo": "혼자 다님",
-      "updated_at": "2026-08-13T12:42:32.094000+00:00"
-    },
     {
       "author_name": "와치",
       "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
@@ -27,17 +16,6 @@
       "updated_at": "2026-08-13T12:42:22.288000+00:00"
     },
     {
-      "author_name": "kotanem",
-      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
-      "plan_date": "2026-08-16",
-      "event": "코믹월드",
-      "genre": "승리의 여신:니케",
-      "character": "밀크:바니",
-      "costume": "",
-      "memo": "혼자 다님",
-      "updated_at": "2026-08-13T12:42:36.504000+00:00"
-    },
-    {
       "author_name": "와치",
       "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
       "plan_date": "2026-08-16",
@@ -47,39 +25,6 @@
       "costume": "",
       "memo": "혼자 다님/오후 6시 퇴근!",
       "updated_at": "2026-08-13T12:42:26.502000+00:00"
-    },
-    {
-      "author_name": "kotanem",
-      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
-      "plan_date": "2026-08-22",
-      "event": "일러스타 페스",
-      "genre": "블루아카이브",
-      "character": "드요코",
-      "costume": "",
-      "memo": "solo",
-      "updated_at": "2026-08-13T12:46:03.756000+00:00"
-    },
-    {
-      "author_name": "와치",
-      "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
-      "plan_date": "2026-08-22",
-      "event": "일러스타 페스",
-      "genre": "",
-      "character": "사진사",
-      "costume": "",
-      "memo": "오후 6시 퇴근!",
-      "updated_at": "2026-08-13T12:44:59.654000+00:00"
-    },
-    {
-      "author_name": "kotanem",
-      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
-      "plan_date": "2026-08-23",
-      "event": "일러스타 페스",
-      "genre": "블루아카이브",
-      "character": "드아루",
-      "costume": "",
-      "memo": "solo",
-      "updated_at": "2026-08-13T12:49:20.497000+00:00"
     }
   ]
 }
