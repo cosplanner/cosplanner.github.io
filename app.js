@@ -62,11 +62,12 @@
     return `${yy}/${mm}/${dd} (${weekday[d.getDay()]})`;
   }
 
-  function formatBadgeDate(value) {
+  function formatBadgeDate(value, eventName) {
     const d = parseDateOnly(value);
-    if (!d) return "일정";
+    if (!d) return String(eventName ?? "일정");
 
-    return `${d.getMonth() + 1}월 · ${weekday[d.getDay()]}요일`;
+    const event = String(eventName ?? "").trim();
+    return `${d.getMonth() + 1}월 ${event}(${weekday[d.getDay()]})`;
   }
 
   function formatGeneratedAt(value) {
@@ -111,6 +112,7 @@
       plan.author_name,
       plan.plan_date,
       plan.event,
+      plan.genre,
       plan.character,
       plan.costume,
       plan.memo,
@@ -172,11 +174,18 @@
       relativeTime(plan.updated_at);
 
     fragment.querySelector(".date-badge").textContent =
-      formatBadgeDate(plan.plan_date);
+      formatBadgeDate(plan.plan_date, plan.event);
 
+    // 두 번째(분홍/빨강 계열) 배지는 행사명이 아니라 장르명.
     const eventBadge = fragment.querySelector(".event-badge");
-    eventBadge.textContent = String(plan.event ?? "");
-    eventBadge.dataset.tone = toneFor(plan.event);
+    const genre = String(plan.genre ?? "").trim();
+
+    eventBadge.textContent = genre;
+    eventBadge.hidden = !genre;
+
+    // 기존 data-tone을 쓰면 장르마다 색이 바뀌므로 제거.
+    // 기본 CSS의 분홍/빨강 계열 배지를 그대로 사용.
+    delete eventBadge.dataset.tone;
 
     // 핵심 수정:
     // "도로시" / "(세렌디피티)"로 나누지 않고
