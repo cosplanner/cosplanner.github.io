@@ -1,8 +1,8 @@
 {
-  "version": 8,
-  "revision": "0a76d6f2127c46bc0e81aded",
-  "generated_at": "2026-08-13T12:49:25.367692+00:00",
-  "count": 8,
+  "version": 9,
+  "revision": "b1e43e31524815934b280b82",
+  "generated_at": "2026-08-13T12:58:27.757553+00:00",
+  "count": 9,
   "plans": [
     {
       "author_name": "kotanem",
@@ -91,6 +91,17 @@
       "costume": "",
       "memo": "오후 6시 퇴근!",
       "updated_at": "2026-08-13T12:45:03.688000+00:00"
+    },
+    {
+      "author_name": "와치",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "plan_date": "2026-09-11",
+      "event": "gxg",
+      "genre": "",
+      "character": "사진사",
+      "costume": "",
+      "memo": "오후 6시 퇴근!",
+      "updated_at": "2026-08-13T12:58:26.204000+00:00"
     }
   ]
 }
