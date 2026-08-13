@@ -1,6 +1,37 @@
 {
   "version": 1,
-  "generated_at": null,
-  "count": 0,
-  "plans": []
+  "generated_at": "2026-08-13T11:30:23.734034+00:00",
+  "count": 3,
+  "plans": [
+    {
+      "author_name": "kotanem",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
+      "plan_date": "2026-08-15",
+      "event": "서코",
+      "character": "도로시",
+      "costume": "세렌디피티",
+      "memo": "",
+      "updated_at": "2026-08-13T10:40:50.663009+00:00"
+    },
+    {
+      "author_name": "kotanem",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
+      "plan_date": "2026-08-15",
+      "event": "서코",
+      "character": "도로시",
+      "costume": "세렌디피티",
+      "memo": "",
+      "updated_at": "2026-08-13T10:44:48.497279+00:00"
+    },
+    {
+      "author_name": "kotanem",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
+      "plan_date": "2026-08-15",
+      "event": "서코",
+      "character": "도로시",
+      "costume": "세렌디피티",
+      "memo": "",
+      "updated_at": "2026-08-13T11:20:14.065349+00:00"
+    }
+  ]
 }
