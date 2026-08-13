@@ -1,8 +1,8 @@
 {
   "version": 5,
-  "revision": "d56a5ddc568764b05046b65d",
-  "generated_at": "2026-08-13T12:04:30.910086+00:00",
-  "count": 1,
+  "revision": "d4286995fc81185960b73ffc",
+  "generated_at": "2026-08-13T12:05:30.912623+00:00",
+  "count": 2,
   "plans": [
     {
       "author_name": "kotanem",
@@ -13,6 +13,16 @@
       "costume": "",
       "memo": "솔로",
       "updated_at": "2026-08-13T12:02:29.286000+00:00"
+    },
+    {
+      "author_name": "kotanem",
+      "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
+      "plan_date": "2026-08-16",
+      "event": "서코",
+      "character": "사진사",
+      "costume": "",
+      "memo": "솔로",
+      "updated_at": "2026-08-13T12:05:27.315000+00:00"
     }
   ]
 }
