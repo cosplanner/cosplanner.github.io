@@ -6,7 +6,10 @@
   const updatedAt = document.getElementById("updatedAt");
   const searchToggle = document.getElementById("searchToggle");
   const searchPanel = document.getElementById("searchPanel");
-  const searchInput = document.getElementById("searchInput");
+
+  // 검색 기능은 사용하지 않음.
+  if (searchToggle) searchToggle.style.display = "none";
+  if (searchPanel) searchPanel.style.display = "none";
   const emptyState = document.getElementById("emptyState");
   const errorState = document.getElementById("errorState");
   const retryButton = document.getElementById("retryButton");
@@ -107,18 +110,6 @@
     return String(Math.abs(hash) % 5);
   }
 
-  function searchText(plan) {
-    return normalize([
-      plan.author_name,
-      plan.plan_date,
-      plan.event,
-      plan.genre,
-      plan.character,
-      plan.costume,
-      plan.memo,
-    ].join(" "));
-  }
-
   function sortPlans(plans) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -181,7 +172,14 @@
     const genre = String(plan.genre ?? "").trim();
 
     eventBadge.textContent = genre;
-    eventBadge.hidden = !genre;
+
+    if (genre) {
+      eventBadge.hidden = false;
+      eventBadge.style.display = "";
+    } else {
+      eventBadge.hidden = true;
+      eventBadge.style.display = "none";
+    }
 
     // 기존 data-tone을 쓰면 장르마다 색이 바뀌므로 제거.
     // 기본 CSS의 분홍/빨강 계열 배지를 그대로 사용.
@@ -213,20 +211,14 @@
   }
 
   function render() {
-    const q = normalize(searchInput.value);
-
-    const filtered = q
-      ? allPlans.filter((plan) => searchText(plan).includes(q))
-      : allPlans;
-
     planList.replaceChildren();
 
-    filtered.forEach((plan, index) => {
+    allPlans.forEach((plan, index) => {
       planList.appendChild(createPlanCard(plan, index));
     });
 
-    planCount.textContent = `${filtered.length}개`;
-    emptyState.hidden = filtered.length !== 0;
+    planCount.textContent = `${allPlans.length}개`;
+    emptyState.hidden = allPlans.length !== 0;
     errorState.hidden = true;
   }
 
@@ -266,19 +258,6 @@
     }
   }
 
-  searchToggle.addEventListener("click", () => {
-    const willOpen = searchPanel.hidden;
-    searchPanel.hidden = !willOpen;
-
-    if (willOpen) {
-      requestAnimationFrame(() => searchInput.focus());
-    } else {
-      searchInput.value = "";
-      render();
-    }
-  });
-
-  searchInput.addEventListener("input", render);
   retryButton.addEventListener("click", loadPlans);
 
   loadPlans();
