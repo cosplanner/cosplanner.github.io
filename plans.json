@@ -1,7 +1,7 @@
 {
   "version": 7,
-  "revision": "2766f21fc13ccfcd4aa4fff1",
-  "generated_at": "2026-08-13T12:28:49.427873+00:00",
+  "revision": "45eca451f7f7067fc22ffe7c",
+  "generated_at": "2026-08-13T12:30:49.430243+00:00",
   "count": 4,
   "plans": [
     {
@@ -12,8 +12,8 @@
       "genre": "",
       "character": "사진사",
       "costume": "",
-      "memo": "솔로",
-      "updated_at": "2026-08-13T12:02:29.286000+00:00"
+      "memo": "11:00 ~ 18:00 예정!",
+      "updated_at": "2026-08-13T12:30:41.060000+00:00"
     },
     {
       "author_name": "와치",
