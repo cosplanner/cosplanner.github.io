@@ -1,7 +1,7 @@
 {
-  "version": 4,
-  "revision": "8f51356e70f9807be7599d94",
-  "generated_at": "2026-08-13T11:59:53.257833+00:00",
+  "version": 5,
+  "revision": "d56a5ddc568764b05046b65d",
+  "generated_at": "2026-08-13T12:04:30.910086+00:00",
   "count": 1,
   "plans": [
     {
@@ -9,10 +9,10 @@
       "avatar_url": "https://cdn.discordapp.com/embed/avatars/2.png",
       "plan_date": "2026-08-15",
       "event": "서코",
-      "character": "도로시",
-      "costume": "세렌디피티",
-      "memo": "드리밍레이크랑 트윈",
-      "updated_at": "2026-08-13T11:59:46.182000+00:00"
+      "character": "사진사",
+      "costume": "",
+      "memo": "솔로",
+      "updated_at": "2026-08-13T12:02:29.286000+00:00"
     }
   ]
 }
