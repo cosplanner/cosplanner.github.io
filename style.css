@@ -421,3 +421,43 @@ h1 {
   background: #dce9ff;
   color: #36547f;
 }
+
+
+/* PC에서는 가로 스크롤이 있다는 걸 보이게 함 */
+@media (hover: hover) and (pointer: fine) {
+  .plan-filter-bar {
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    cursor: grab;
+  }
+
+  .plan-filter-bar::-webkit-scrollbar {
+    display: block;
+    height: 6px;
+  }
+
+  .plan-filter-bar::-webkit-scrollbar-thumb {
+    background: rgba(120, 125, 140, 0.35);
+    border-radius: 999px;
+  }
+
+  .plan-filter-bar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .plan-filter-bar.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+}
+
+/* 모바일에서는 기존처럼 스크롤바를 숨김 */
+@media (hover: none), (pointer: coarse) {
+  .plan-filter-bar {
+    scrollbar-width: none;
+  }
+
+  .plan-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+}

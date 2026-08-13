@@ -196,6 +196,7 @@
     allButton.addEventListener("click", () => {
       activeFilter = "all";
       renderFilters();
+      enableDesktopFilterScroll();
       render();
     });
     filterBar.appendChild(allButton);
@@ -219,6 +220,80 @@
     }
 
     filterBar.hidden = items.length === 0;
+  }
+
+  function enableDesktopFilterScroll() {
+    const filterBar = ensureFilterBar();
+
+    if (filterBar.dataset.desktopScrollReady === "1") {
+      return;
+    }
+
+    filterBar.dataset.desktopScrollReady = "1";
+
+    // PC 마우스 휠을 좌우 스크롤로 변환.
+    filterBar.addEventListener(
+      "wheel",
+      (event) => {
+        if (filterBar.scrollWidth <= filterBar.clientWidth) {
+          return;
+        }
+
+        const amount =
+          Math.abs(event.deltaX) > Math.abs(event.deltaY)
+            ? event.deltaX
+            : event.deltaY;
+
+        filterBar.scrollLeft += amount;
+        event.preventDefault();
+      },
+      { passive: false }
+    );
+
+    // 마우스로 잡고 좌우 드래그도 가능.
+    let dragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
+    filterBar.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "mouse") {
+        return;
+      }
+
+      dragging = true;
+      startX = event.clientX;
+      startScrollLeft = filterBar.scrollLeft;
+
+      filterBar.classList.add("is-dragging");
+      filterBar.setPointerCapture(event.pointerId);
+    });
+
+    filterBar.addEventListener("pointermove", (event) => {
+      if (!dragging) {
+        return;
+      }
+
+      const dx = event.clientX - startX;
+      filterBar.scrollLeft = startScrollLeft - dx;
+    });
+
+    const stopDragging = (event) => {
+      if (!dragging) {
+        return;
+      }
+
+      dragging = false;
+      filterBar.classList.remove("is-dragging");
+
+      try {
+        filterBar.releasePointerCapture(event.pointerId);
+      } catch {
+        // 이미 capture가 풀린 경우 무시.
+      }
+    };
+
+    filterBar.addEventListener("pointerup", stopDragging);
+    filterBar.addEventListener("pointercancel", stopDragging);
   }
 
   function sortPlans(plans) {
